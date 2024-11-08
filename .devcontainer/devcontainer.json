@@ -1,0 +1,32 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/python
+{
+	"name": "Workshop SQLMesh",
+	"dockerComposeFile": "docker-compose.yml",
+    "service": "devcontainer",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+	"features": {
+		"ghcr.io/jsburckhardt/devcontainer-features/uv:1": {},
+		"ghcr.io/eitsupi/devcontainer-features/duckdb-cli:1": {}
+	},
+	"customizations": {
+		"vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-python.debugpy",
+                "ms-python.vscode-pylance",
+                "charliermarsh.ruff",
+				"mtxr.sqltools",
+				"mtxr.sqltools-driver-pg",
+				"RandomFractalsInc.duckdb-sql-tools"
+            ]
+        }
+	},
+	"postCreateCommand": "rm -Rf db.db && cat ./scripts/duckdb-init.sql | duckdb db.db"
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}
