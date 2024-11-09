@@ -1,0 +1,6 @@
+- name: '"db"."workshop"."events"'
+  gateway: local
+  columns:
+    id: INT
+    amount: FLOAT
+    event_date: TIMESTAMP
