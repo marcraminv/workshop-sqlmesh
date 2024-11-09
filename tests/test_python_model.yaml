@@ -1,0 +1,12 @@
+
+test_python_model_is_working:
+  model: core.basic_python
+  inputs:
+    core.view:
+      rows:
+      - total: 1
+  outputs:
+    query:
+      rows:
+      - id: 1
+        name: "Marc"

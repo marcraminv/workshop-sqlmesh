@@ -1,0 +1,18 @@
+gateways:
+  local:
+    connection:
+      type: duckdb
+      database: db.db
+    state_connection:
+      type: postgres
+      host: db
+      port: 5432
+      user: postgres
+      password: postgres
+      database: workshop
+
+default_gateway: local
+
+model_defaults:
+  dialect: duckdb
+  start: 2024-11-01
