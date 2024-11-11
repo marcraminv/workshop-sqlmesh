@@ -213,7 +213,7 @@ Take a minute to check what happened on the state database (PotgreSQL instance).
 select * from sqlmesh._snapshots;
 ```
 
-On the following picture we can see that SQLMesh created 2 rows with different version number on `_intervals` table. That makes completely sense! We modified the `core.full` model introducing a breaking change, so a new variant was created. At the same time we can see the view living on the virtual layers. `core.full` on the prod environment, and `core__dev` on the dev environment. Checking the `CREATE STATEMENT` on duckdb we see:
+On the following picture we can see that SQLMesh created 2 rows with different version number on `_intervals` table. That makes completely sense! We modified the `core.full` model introducing a breaking change, so a new variant was created.
 
 ![](./img/step_dev_environment.png)
 
